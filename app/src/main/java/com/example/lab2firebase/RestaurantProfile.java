@@ -19,21 +19,8 @@ public class RestaurantProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_profile);
 
-        //************ViewFlipper
-        int images[]={R.drawable.abbasi_rest_1,R.drawable.abbasi_rest_2,R.drawable.abbasi_rest_3,R.drawable.abbasi_rest_4};
-        viewFlipper=findViewById(R.id.viewFlipper);
-        for (int image:images){
-            flipperImages(image);
-        }
-        //***********open new activity to add daily offers
-        ImageButton btnDailyOffer = findViewById(R.id.btnDailyOffer);
-        btnDailyOffer.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                openDailyOffer();
-            }
-        });
-        //End of btn Daily offers
+
+
 
 
         //***********Toolbar
@@ -67,14 +54,5 @@ public class RestaurantProfile extends AppCompatActivity {
         Intent intent= new Intent(this, NewDailyOffer.class);
         startActivity(intent);
     }
-    //.....End daily offer
-    public void flipperImages(int image){
-        ImageView imageView=new ImageView(this);
-        imageView.setBackgroundResource(image);
-        viewFlipper.addView(imageView);
-        viewFlipper.setFlipInterval(4000);
-        viewFlipper.setAutoStart(true);
-        viewFlipper.setInAnimation(this,android.R.anim.slide_in_left);
-        viewFlipper.setOutAnimation(this,android.R.anim.slide_out_right);
-    }
+
 }

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".FoodDetailsActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/lightTransparentGray"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <LinearLayout
+                    android:id="@+id/linearNameFood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableStart="@drawable/ic_food_white_24dp"
+                        android:gravity="center" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtFoodName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Please enter name of food*"
+                            android:inputType="textCapWords"
+                            android:maxLength="30"
+                            android:textColor="@color/colorBlack"
+                            android:textColorHint="@color/lightGray"
+                            android:textSize="15sp" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableStart="@drawable/ic_attach_money_white_24dp"
+                        android:gravity="center" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter the price*, such as 25.5, or 25"
+                            android:inputType="numberDecimal"
+                            android:maxLength="7"
+                            android:textColor="@color/colorBlack"
+                            android:textColorHint="@color/lightGray"
+                            android:textSize="15sp"
+                            android:tooltipText="@string/price_tooltip" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableStart="@drawable/ic_money_off_white_24dp" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtDiscount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter the amount of discount in percentage"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:textColor="@color/colorBlack"
+                            android:textColorHint="@color/lightGray"
+                            android:textSize="15sp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edtAvailableQuantity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:hint="Enter available quantity*"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textColor="@color/colorBlack"
+                        android:textColorHint="@color/lightGray"
+                        android:textSize="15sp" />
+
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/lightTransparentGray"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/short_description"
+                    android:textColor="@color/darkGray"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/edtShortDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:maxLines="2"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/lightTransparentGray"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/photo"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/imgFood"
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/default_food" />
+
+                <ImageButton
+                    android:id="@+id/btnSelectPhoto"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/btn_camera"
+                    android:src="@drawable/ic_photo_camera_black_24dp" />
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <ProgressBar
+            android:id="@+id/uploadProgress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="@color/darkTransparentGray"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:text="Update" />
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_margin="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@color/darkTransparentGray"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:layout_height="wrap_content"
+                android:text="Delete" />
+
+            <Button
+                android:id="@+id/btnView"
+                android:layout_margin="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@color/darkTransparentGray"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:layout_height="wrap_content"
+                android:text="View" />
+            <Button
+                android:id="@+id/btnHome"
+                android:layout_margin="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@color/darkTransparentGray"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:layout_height="wrap_content"
+                android:text="Home" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

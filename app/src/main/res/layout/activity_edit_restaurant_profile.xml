@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:background="@drawable/background"
+    tools:context=".EditRestaurantProfile">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            app:title="My profile"
+            app:titleMarginStart="18dp"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Small"
+            app:titleTextColor="@color/colorBlack" />
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/lightTransparentGray">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <EditText
+                            android:id="@+id/edt_nameRestaurant"
+                            android:layout_width="match_parent"
+                            android:inputType="textCapWords"
+                            android:maxLength="30"
+                            android:layout_height="wrap_content"
+                            android:hint="Please enter name of restaurant"
+                            android:textColorHint="@color/darkGray"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="15sp"/>
+                    </android.support.design.widget.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/phone"
+                        android:drawableStart="@drawable/ic_local_phone_black_24dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"/>
+                    <EditText
+                        android:id="@+id/edt_phoneRestaurant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLength="16"
+                        android:textColorHint="@color/darkGray"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mobile"
+                        android:drawableStart="@drawable/ic_phone_iphone_black_24dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"/>
+                    <EditText
+                        android:id="@+id/edt_mobileresturant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLength="16"
+                        android:hint="@string/mobile_hint"
+                        android:textColorHint="@color/darkGray"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/location"
+                        android:drawableStart="@drawable/ic_location_on_black_24dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"/>
+                    <EditText
+                        android:id="@+id/edt_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords"
+                        android:maxLength="25"
+                        android:hint="@string/location_hint"
+                        android:textColorHint="@color/darkGray"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"/>
+
+                     </LinearLayout>
+                </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardOpeningHours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/lightTransparentGray">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_access_time_black_24dp"
+                    android:text="@string/opening_hours"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgFood"
+                android:layout_width="242dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="596dp"
+                android:layout_marginEnd="58dp"
+                android:src="@drawable/default_food" />
+
+            <ImageButton
+                android:id="@+id/btnSelectPhoto1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="64dp"
+                android:layout_marginBottom="21dp"
+                android:background="@drawable/btn_camera"
+                android:src="@drawable/ic_photo_camera_black_24dp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="194dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="163dp"
+                android:layout_marginBottom="-55dp"
+                android:dropDownWidth="match_parent"
+                android:entries="@array/weekdays"
+                android:fadingEdge="horizontal"
+                android:spinnerMode="dropdown"
+                android:textAlignment="inherit" />
+
+            <ImageButton
+                android:id="@+id/btntimepicker3"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="146dp"
+                android:layout_marginEnd="113dp"
+                android:layout_toStartOf="@+id/btntimepicker4"
+                android:layout_weight="1"
+                android:src="@drawable/ic_access_time_black_24dp"
+                android:textSize="9dp" />
+
+            <ImageButton
+                android:id="@+id/btntimepicker4"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/txt_monday"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="147dp"
+                android:layout_marginEnd="139dp"
+                android:layout_marginBottom="18dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_access_time_black_24dp"
+                android:textSize="9dp" />
+
+            <TextView
+                android:id="@+id/txthourfrom2"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="147dp"
+                android:hint="FROM:   "
+                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/colorAccent" />
+
+            <ImageButton
+                android:id="@+id/btntimepicker2"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="83dp"
+                android:layout_marginEnd="141dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_access_time_black_24dp"
+
+                android:textSize="9dp"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/btntimepicker1"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="83dp"
+                android:layout_marginEnd="111dp"
+                android:layout_toStartOf="@+id/btntimepicker2"
+                android:layout_weight="1"
+                android:src="@drawable/ic_access_time_black_24dp"
+                android:textSize="9dp" />
+
+            <TextView
+                android:id="@+id/txthourfrom"
+                android:layout_width="94dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="74dp"
+                android:layout_marginTop="84dp"
+                android:hint="FROM:   "
+                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/txthourto"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="84dp"
+                android:layout_marginEnd="38dp"
+                android:hint="FROM:   "
+                android:textColorHint="@color/colorAccent"
+                android:textAllCaps="true"
+                android:textColor="@color/colorAccent"
+
+                />
+
+            <TextView
+                android:id="@+id/txthourto2"
+                android:layout_width="102dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="146dp"
+                android:layout_marginEnd="39dp"
+                android:hint="FROM:   "
+                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/txt_monday"
+                android:layout_width="359dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="473dp"
+                android:text="monday"
+                android:textColor="@color/colorAccent"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/txt_tuesday"
+                android:layout_width="359dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="9dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="446dp"
+                android:text="tuesday"
+                android:textColor="@color/colorAccent"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/txt_saturday"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="338dp"
+
+                android:text="saturday"
+                android:textColor="@color/colorAccent"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/txt_wednesday"
+                android:layout_width="358dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="421dp"
+
+                android:text="wednesday"
+                android:textColor="@color/colorAccent"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/txt_sunday"
+                android:layout_width="360dp"
+                android:layout_height="29dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="303dp"
+                android:text="sunday"
+                android:textColor="@color/colorAccent"
+
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/txt_thursday"
+                android:layout_width="359dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="390dp"
+
+                android:text="thursday"
+                android:textColor="@color/colorAccent"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/txt_friday"
+                android:layout_width="362dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="363dp"
+
+                android:text="friday"
+                android:textColor="@color/colorAccent"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+            <Button
+                android:id="@+id/btnsave"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                android:layout_height="wrap_content"
+                android:background="@color/lightGray"
+                android:textAllCaps="false"
+                android:text="@string/submit" />
+
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@color/lightGray"
+                android:text="@string/cancel"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

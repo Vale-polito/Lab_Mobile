@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "177691339732",
+    "firebase_url": "https://lab2firebase-14a34.firebaseio.com",
+    "project_id": "lab2firebase-14a34",
+    "storage_bucket": "lab2firebase-14a34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177691339732:android:dac120d0f68cda3b",
+        "android_client_info": {
+          "package_name": "com.example.lab2firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177691339732-sn93ns69pf585n5un6slsq63vj5tvg77.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lab2firebase",
+            "certificate_hash": "64f58f1ba7f88a6d6d23252f78bd71936a76cfcb"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_k0yyMzPLx9_A6EtVRPJsuA-spZ_Gp1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177691339732-a8hmuppeuok57nvddfgnoa7h24tsclm1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

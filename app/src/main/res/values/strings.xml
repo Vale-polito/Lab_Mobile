@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Lab2Firebase</string>
+    <string name="direction">DIRECTION</string>
+    <string name="share">SHARE</string>
+    <string name="call">CALL</string>
+    <string name="edit">Edit</string>
+    <string name="back">Back</string>
+    <string name="daily_offer">DAILY OFFERS</string>
+    <string name="food_name">Name of food* :</string>
+    <string name="name">Name * :</string>
+    <string name="phone">Phone * :</string>
+    <string name="mobile">Mobile * :</string>
+    <string name="location">Location * :</string>
+    <string name="cancel">Cancel</string>
+    <string name="opening_hours">Opening hours * :</string>
+    <string name="location_hint">Grugliasco, via Berta 5</string>
+    <string name="phone_hint">+39 0815406593</string>
+    <string name="mobile_hint">+39 3663994321</string>
+    <string name="food_name_hint">Pizza</string>
+    <string name="price">Price *: </string>
+    <string name="price_tooltip">Price should be like 12 or 12.5</string>
+    <string name="euro">$</string>
+    <string name="category">Category * :</string>
+    <string name="restaurant_profile">Restaurant profile</string>
+    <string name="edit_restaurant_profile">Edit restaurant profile</string>
+    <string name="discount"> Discount: </string>
+    <string name="restaurant_name"> Shab Neshin Restaurant </string>
+    <string name="discount_tooltip">Discount should be in percent</string>
+    <string name="short_description">   Enter short description about food,ingredients.It is useful for people who are allergic, or follow special diet.  </string>
+    <string name="available_quantity">Available quantity * :</string>
+    <string name="photo">Proper photo attracts customers</string>
+    <string name="submit">Submit</string>
+    <string name="preview">Preview</string>
+    <string name="offer_food">Offer daily foods</string>
+    <array name="Category">
+        <item>Main course</item>
+        <item>Side dish</item>
+        <item>Beverage</item>
+        <item>Dessert</item>
+    </array>
+    <array name="opening_hour">
+        <item>Saturday
+            <item>10-14 AM</item>
+            <item>17-23 PM</item>
+        </item>
+        <item>Sunday
+            <item>10-14 AM</item>
+            <item>17-23 PM</item>
+        </item>
+        <item>Monday
+            <item>10-14 AM</item>
+            <item>17-23 PM</item>
+        </item>
+        <item>Tuesday
+            <item>10-14 AM</item>
+            <item>17-23 PM</item>
+        </item>
+        <item>Wednesday
+            <item>10-14 AM</item>
+            <item>17-23 PM</item>
+        </item>
+        <item>Thursday
+            <item>10-14 AM</item>
+            <item>17-23 PM</item>
+        </item>
+        <item>Friday
+            <item>10-14 AM</item>
+            <item>17-23 PM</item>
+        </item>
+    </array>
+    <string-array name="weekdays">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+</resources>

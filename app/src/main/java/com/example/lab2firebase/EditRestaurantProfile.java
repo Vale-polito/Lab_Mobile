@@ -63,6 +63,14 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_restaurant_profile);
+        Button btnCancel= findViewById(R.id.btnCancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(EditRestaurantProfile.this, CircleMenu.class);
+                startActivity(i);
+            }
+        });
 
         btnSelectPhoto1 = findViewById(R.id.btnSelectPhoto1);
         btnSelectPhoto1.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +104,7 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
         txt14 = (TextView) findViewById(R.id.txt_saturday);
         txt15 = (TextView) findViewById(R.id.txt_sunday);
         savebutton = (Button) findViewById(R.id.btnsave);
+        imgFood=(ImageView) findViewById(R.id.imgFood);
         ImageButton btntimepicker1, btntimepicker2, btntimepicker3, btntimepicker4;
         final DialogFragment timepicker1, timepicker2, timepicker3, timepicker4;
         a = b = c = d = false;
@@ -278,25 +287,7 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
         }
     }
 
-    //********** what toolbar is doing
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.backmenu_black, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.btn_back) {
-            Intent intent = new Intent(this, RestaurantProfile.class);
-            startActivity(intent);
-
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    //End of code related to the toolbar
 
 
     @Override
@@ -343,7 +334,8 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
         address = txt8.getText().toString().trim();
 
 
-        saveinformation saveinformation = new saveinformation(name, phone, mobile, address);
+        saveinformation saveinformation = new saveinformation(name, phone, mobile, address,String.valueOf(image_uri));
+
         savedaysandhours savedaysandhours = new savedaysandhours(weekday, hour1, hour2, hour3, hour4);
         reference.child(name).child("working days and hours").child(weekday).setValue(savedaysandhours);
         reference.child(name).child("info").setValue(saveinformation);

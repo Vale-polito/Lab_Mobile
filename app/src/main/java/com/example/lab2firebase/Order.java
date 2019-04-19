@@ -8,10 +8,19 @@ public class Order implements Serializable {
     private int nbItem;
     private double totalPrice;
     private String customer;
+    private String comments;
     private ArrayList<ItemOrdered> items;
+
+    public Order(int id, String customer, String comments, ArrayList<ItemOrdered> items){
+        this.id = id;
+        this.comments = comments;
+        this.customer = customer;
+        this.items = items;
+    }
 
     public Order(int id, String customer, ArrayList<ItemOrdered> items){
         this.id = id;
+        this.comments = "";
         this.customer = customer;
         this.items = items;
     }
@@ -32,12 +41,19 @@ public class Order implements Serializable {
     }
 
     public int getNbItem(){
-        nbItem = items.size();
+        nbItem = 0;
+        int i;
+        for (i=0; i<items.size();i++){
+            nbItem += items.get(i).getQuantity();
+        }
         return nbItem;
     }
 
     public String getCustomer(){
         return customer;
+    }
+    public String getComments(){
+        return comments;
     }
 
     public ItemOrdered getItem(int position){

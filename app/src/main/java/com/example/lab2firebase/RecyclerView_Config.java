@@ -69,8 +69,8 @@ public class RecyclerView_Config {
         public void bind(DailyOffer dailyOffer, String key) {
 
             mFoodname.setText(dailyOffer.getName());
-            mPrice.setText(dailyOffer.getPrice());
-            mDiscount.setText(dailyOffer.getDiscount());
+            mPrice.setText(dailyOffer.getPrice()+"€");
+            mDiscount.setText(dailyOffer.getDiscount()+"%");
             mShortdescription.setText(dailyOffer.getShortdescription());
             mAvailablequantity.setText(dailyOffer.getAvailablequantity());
 

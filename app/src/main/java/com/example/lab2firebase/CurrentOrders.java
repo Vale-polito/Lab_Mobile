@@ -48,9 +48,9 @@ public class CurrentOrders extends AppCompatActivity implements OrdersFragment.O
         list3.addAll(Arrays.asList(item5, item2, item4, item6, item7));
         list4.addAll(Arrays.asList(item7, item5));
 
-        order1 = new Order(12345, "John", list1);
+        order1 = new Order(12345, "John", "Add salt please", list1);
         order2 = new Order(52949, "Paul", list2);
-        order3 = new Order(28474, "Johanna", list3);
+        order3 = new Order(28474, "Johanna","A lot of sauce", list3);
         order4 = new Order(84762, "Hermann", list4);
 
         totalorders.addAll(Arrays.asList(order1,order2,order3,order4));

@@ -15,12 +15,14 @@ public class DetailedItemActivity extends AppCompatActivity implements Serializa
     ListView itemsListView;
     TextView orderNumber;
     TextView totalPrice;
+    TextView commentTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_item);
 
+        commentTextView = (TextView) findViewById(R.id.comment_textView);
         itemsListView = (ListView) findViewById(R.id.itemsListView);
         orderNumber = (TextView) findViewById(R.id.orderNb_textView);
         totalPrice = (TextView) findViewById(R.id.totalPrice_textView);
@@ -32,6 +34,9 @@ public class DetailedItemActivity extends AppCompatActivity implements Serializa
         DetailedItemAdapter detailedItemAdapter = new DetailedItemAdapter(getApplicationContext(), items);
         itemsListView.setAdapter(detailedItemAdapter);
 
+        if (current_order.getComments()!="") {
+            commentTextView.setText("Comment: " + current_order.getComments());
+        }
         orderNumber.setText("Order n°" + current_order.getId());
 
         totalPrice.setText("Total: " + current_order.getTotalPrice() + "€");

@@ -6,6 +6,7 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -13,6 +14,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
@@ -39,6 +41,8 @@ import java.util.Objects;
 
 public class EditRestaurantProfile extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, AdapterView.OnItemSelectedListener {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private SharedPreferences shrdprfrmces;
+    private SharedPreferences.Editor medit;
     private DatabaseReference reference = database.getReference("Resturants");
     //saving hours variables
     private TextView txt1, txt2, txt3, txt4;
@@ -89,7 +93,8 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
                 selectImage();
             }
         });
-
+        shrdprfrmces= PreferenceManager.getDefaultSharedPreferences(this);
+        medit=shrdprfrmces.edit();
         Spinner weekdays = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.weekdays, android.R.layout.simple_list_item_1);
         adapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
@@ -114,6 +119,10 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
         txt15 = (TextView) findViewById(R.id.txt_sunday);
         savebutton = (Button) findViewById(R.id.btnsave);
         imgFood=(ImageView) findViewById(R.id.imgFood);
+        medit.putString("resname",txt5.getText().toString());
+        medit.putString("restphone",txt6.getText().toString());
+        medit.putString("rest mobile",txt7.getText().toString());
+        medit.putString("rest address",txt8.getText().toString());
         ImageButton btntimepicker1, btntimepicker2, btntimepicker3, btntimepicker4;
         final DialogFragment timepicker1, timepicker2, timepicker3, timepicker4;
         a = b = c = d = false;

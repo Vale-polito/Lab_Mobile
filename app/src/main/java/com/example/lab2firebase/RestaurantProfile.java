@@ -1,25 +1,47 @@
 package com.example.lab2firebase;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class RestaurantProfile extends AppCompatActivity {
-
+TextView name,addrees,phone,mobile;
+String resname,resphone,resmobile,resaddress;
+    private SharedPreferences shrdprfrmces;
+    private SharedPreferences.Editor medit;
     ViewFlipper viewFlipper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_profile);
+        shrdprfrmces= PreferenceManager.getDefaultSharedPreferences(this);
+        medit=shrdprfrmces.edit();
+        name= (TextView) findViewById(R.id.txtNameRestaurant);
+        phone=(TextView) findViewById(R.id.txtPhone);
+        mobile=(TextView)findViewById(R.id.txtCell);
+        addrees=(TextView)findViewById(R.id.txtAddress);
+        resname=shrdprfrmces.getString("resname","default");
+        resphone=shrdprfrmces.getString("restphone","default");
+        resmobile=shrdprfrmces.getString("rest mobile","default");
+        resaddress=shrdprfrmces.getString("rest addres","default");
+        name.setText(resname);
+        phone.setText(resphone);
+        mobile.setText(resmobile);
+        addrees.setText(resaddress);
 
         ImageButton btnAddOffer=findViewById(R.id.btnDailyOffer);
 

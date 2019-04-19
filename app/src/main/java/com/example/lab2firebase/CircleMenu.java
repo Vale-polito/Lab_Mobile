@@ -48,6 +48,10 @@ public class CircleMenu extends AppCompatActivity {
                         {
                             action=5;
                         }
+                        else if (index==6)
+                        {
+                            action=6;
+                        }
                     }
 
                 }).setOnMenuStatusChangeListener(new OnMenuStatusChangeListener() {
@@ -67,6 +71,10 @@ public class CircleMenu extends AppCompatActivity {
                 }
                 if (action==4) {
                     Intent intent = new Intent(CircleMenu.this, FoodListActivity.class);
+                    startActivity(intent);
+                }
+                if (action==0) {
+                    Intent intent = new Intent(CircleMenu.this, CurrentOrders.class);
                     startActivity(intent);
                 }
 

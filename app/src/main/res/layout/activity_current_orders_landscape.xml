@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout> -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/orderTitle_fragment"
+            android:name="com.example.lab2firebase.OrdersFragment"
+            android:layout_width="419dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <fragment android:name="com.example.lab2firebase.DetailedItemFragment"
+            android:id="@+id/orderDetail_fragment"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

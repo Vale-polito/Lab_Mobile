@@ -18,6 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".FoodDetailsActivity"></activity>
+        <activity android:name=".CurrentOrders"/>
+        <activity android:name=".DetailedItemActivity"/>
         <activity android:name=".FoodListActivity" />
         <activity android:name=".RestaurantProfile" />
         <activity android:name=".EditRestaurantProfile"></activity>

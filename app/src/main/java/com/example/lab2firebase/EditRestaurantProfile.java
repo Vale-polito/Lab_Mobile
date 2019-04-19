@@ -72,6 +72,15 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
             }
         });
 
+        Button btnView=findViewById(R.id.btnView);
+        btnView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(EditRestaurantProfile.this, RestaurantProfile.class);
+                startActivity(i);
+            }
+        });
+
         btnSelectPhoto1 = findViewById(R.id.btnSelectPhoto1);
         btnSelectPhoto1.setOnClickListener(new View.OnClickListener() {
             @Override

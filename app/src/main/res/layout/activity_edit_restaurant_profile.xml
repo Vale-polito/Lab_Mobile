@@ -542,7 +542,15 @@
                 android:background="@color/darkTransparentGray"
                 android:text="Save"
                 android:textAllCaps="false" />
-
+            <Button
+                android:id="@+id/btnView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@color/darkTransparentGray"
+                android:text="View"
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btnCancel"

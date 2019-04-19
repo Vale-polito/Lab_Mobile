@@ -1,11 +1,13 @@
 package com.example.lab2firebase;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.view.View;
 import android.widget.ImageButton;
@@ -19,8 +21,15 @@ public class RestaurantProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_profile);
 
+        ImageButton btnAddOffer=findViewById(R.id.btnDailyOffer);
 
-
+        btnAddOffer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(RestaurantProfile.this, NewDailyOffer.class);
+                startActivity(i);
+            }
+        });
 
 
         //***********Toolbar

@@ -92,7 +92,8 @@ public class CircleMenu extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        circleMenu.closeMenu();
+
+        //circleMenu.closeMenu();
     }
     @Override
     protected void onPause(){

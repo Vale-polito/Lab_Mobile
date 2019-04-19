@@ -19,6 +19,7 @@ public class DetailedItemFragment extends Fragment {
 
     ListView itemsListView;
     TextView orderNumber;
+    TextView commentSection;
     TextView totalPrice;
     Context thiscontext;
     protected Activity mActivity;
@@ -29,6 +30,7 @@ public class DetailedItemFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.detaileditemfragment_layout, container, false);
 
+        commentSection = (TextView) v.findViewById(R.id.comment_textView);
         itemsListView = (ListView) v.findViewById(R.id.itemsListView);
         orderNumber = (TextView) v.findViewById(R.id.orderNb_textView);
         totalPrice = (TextView) v.findViewById(R.id.totalPrice_textView);
@@ -48,6 +50,9 @@ public class DetailedItemFragment extends Fragment {
         if(mActivity!=null) {
             DetailedItemAdapter detailedItemAdapter = new DetailedItemAdapter(mActivity, items);
             itemsListView.setAdapter(detailedItemAdapter);
+            if(current_order.getComments() != "") {
+                commentSection.setText("Comment: " + current_order.getComments());
+            }
 
             orderNumber.setText("Order n°" + current_order.getId());
 

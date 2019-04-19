@@ -27,7 +27,8 @@ public class FoodListActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_notifications:
-
+                    intent = new Intent(FoodListActivity.this, CurrentOrders.class);
+                    startActivity(intent);
                     return true;
             }
             return false;

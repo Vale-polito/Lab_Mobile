@@ -19,29 +19,54 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class RestaurantProfile extends AppCompatActivity {
-TextView name,addrees,phone,mobile;
-String resname,resphone,resmobile,resaddress;
-    private SharedPreferences shrdprfrmces;
-    private SharedPreferences.Editor medit;
+TextView name,addrees,phone,mobile,Mon,sat,sun,tue,wed,thu,fri;
+String resname,resphone,resmobile,resaddress,monday,saturday,sunday,tuesday,wednesday,thursday,friday;
+    public SharedPreferences result;
     ViewFlipper viewFlipper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_profile);
-        shrdprfrmces= PreferenceManager.getDefaultSharedPreferences(this);
-        medit=shrdprfrmces.edit();
+        result= PreferenceManager.getDefaultSharedPreferences(this);
         name= (TextView) findViewById(R.id.txtNameRestaurant);
         phone=(TextView) findViewById(R.id.txtPhone);
         mobile=(TextView)findViewById(R.id.txtCell);
         addrees=(TextView)findViewById(R.id.txtAddress);
-        resname=shrdprfrmces.getString("resname","default");
-        resphone=shrdprfrmces.getString("restphone","default");
-        resmobile=shrdprfrmces.getString("rest mobile","default");
-        resaddress=shrdprfrmces.getString("rest addres","default");
+        Mon=(TextView)findViewById(R.id.txt_monday);
+        sat=(TextView)findViewById(R.id.txt_saturday);
+        sun=(TextView)findViewById(R.id.txt_sunday);
+        tue=(TextView)findViewById(R.id.txt_tuesday);
+        wed=(TextView)findViewById(R.id.txt_wednesday);
+        thu=(TextView)findViewById(R.id.txt_thursday);
+        fri=(TextView)findViewById(R.id.txt_friday);
+
+
+
+
+        resname=result.getString("name","default");
+        resphone=result.getString("phone","default");
+        resmobile=result.getString("mobile","default");
+        resaddress=result.getString("address","default");
+        monday=result.getString("Monday","");
+        saturday=result.getString("Saturday","");
+        sunday=result.getString("Sunday","");
+        tuesday=result.getString("Tuesday","");
+        wednesday=result.getString("Wednesday","");
+        thursday=result.getString("Thursday","");
+        friday=result.getString("Friday","");
         name.setText(resname);
         phone.setText(resphone);
         mobile.setText(resmobile);
         addrees.setText(resaddress);
+        Mon.setText(monday);
+        tue.setText(tuesday);
+        wed.setText(wednesday);
+        thu.setText(thursday);
+        sat.setText(saturday);
+        sun.setText(sunday);
+        fri.setText(friday);
+
+
 
         ImageButton btnAddOffer=findViewById(R.id.btnDailyOffer);
 
@@ -86,4 +111,6 @@ String resname,resphone,resmobile,resaddress;
         startActivity(intent);
     }
 
+
 }
+

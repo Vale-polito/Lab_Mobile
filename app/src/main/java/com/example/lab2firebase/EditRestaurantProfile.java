@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
+import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
@@ -27,6 +28,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -41,7 +43,7 @@ import java.util.Objects;
 
 public class EditRestaurantProfile extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, AdapterView.OnItemSelectedListener {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private SharedPreferences shrdprfrmces;
+    public SharedPreferences shrdprfrmces;
     private SharedPreferences.Editor medit;
     private DatabaseReference reference = database.getReference("Resturants");
     //saving hours variables
@@ -67,20 +69,21 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_restaurant_profile);
+
+        Button btnView= findViewById(R.id.btnView);
+        btnView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(EditRestaurantProfile.this,RestaurantProfile.class);
+                startActivity(i);
+            }
+        });
         Button btnCancel= findViewById(R.id.btnCancel);
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(EditRestaurantProfile.this, CircleMenu.class);
-                startActivity(i);
-            }
-        });
 
-        Button btnView=findViewById(R.id.btnView);
-        btnView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(EditRestaurantProfile.this, RestaurantProfile.class);
                 startActivity(i);
             }
         });
@@ -119,10 +122,6 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
         txt15 = (TextView) findViewById(R.id.txt_sunday);
         savebutton = (Button) findViewById(R.id.btnsave);
         imgFood=(ImageView) findViewById(R.id.imgFood);
-        medit.putString("resname",txt5.getText().toString());
-        medit.putString("restphone",txt6.getText().toString());
-        medit.putString("rest mobile",txt7.getText().toString());
-        medit.putString("rest address",txt8.getText().toString());
         ImageButton btntimepicker1, btntimepicker2, btntimepicker3, btntimepicker4;
         final DialogFragment timepicker1, timepicker2, timepicker3, timepicker4;
         a = b = c = d = false;
@@ -350,7 +349,11 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
         phone = txt6.getText().toString().trim();
         mobile = txt7.getText().toString().trim();
         address = txt8.getText().toString().trim();
-
+        medit.putString("name",name);
+        medit.putString("phone",phone);
+        medit.putString("mobile",mobile);
+        medit.putString("address",address);
+        medit.apply();
 
         saveinformation saveinformation = new saveinformation(name, phone, mobile, address,String.valueOf(image_uri));
 
@@ -359,22 +362,30 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
         reference.child(name).child("info").setValue(saveinformation);
 
         if (weekday.equals(Monday)) {
-            txt9.setText(weekday + ":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            txt9.setText(":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            medit.putString("Monday",":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
         } else if (weekday.equals(Tuesday)) {
-            txt10.setText(weekday + ":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            txt10.setText(":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            medit.putString("Tuesday", ":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
         } else if (weekday.equals(Wednesday)) {
-            txt11.setText(weekday + ":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            txt11.setText(":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            medit.putString("Wednesday",":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
         } else if (weekday.equals(Thursday)) {
-            txt12.setText(weekday + ":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            txt12.setText(":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            medit.putString("Thursday", ":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
         } else if (weekday.equals(Friday)) {
-            txt13.setText(weekday + ":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            txt13.setText(":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            medit.putString("Friday",":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
         } else if (weekday.equals(Saturday)) {
-            txt14.setText(weekday + ":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            txt14.setText(":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            medit.putString("Saturday",":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
         } else if (weekday.equals(Sunday)) {
-            txt15.setText(weekday + ":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            txt15.setText(":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
+            medit.putString("Sunday",":  From: " + hour1 + " - " + hour2 + "   And  from: " + hour3 + " - " + hour4);
         }
 
         Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
+
 
     }
 
@@ -386,10 +397,6 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
-    }
-
-    public void readFromDatabase() {
 
     }
 
@@ -490,6 +497,46 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
     }
 
 
+    public void restoredata() {
+        String st1,st2,st3,st4,st5,st6,st7,st8,st9,st10,st11,st12,st13,st14,st15;
+        st1=shrdprfrmces.getString("name","");
+
+        st3=shrdprfrmces.getString("phone","default");
+        st4=shrdprfrmces.getString("mobile","default");
+        st5=shrdprfrmces.getString("address","default");
+        st6=shrdprfrmces.getString("Monday","");
+        st7=shrdprfrmces.getString("Tuesday","");
+        st8=shrdprfrmces.getString("Wednesday","");
+        st9=shrdprfrmces.getString("Thursday","");
+        st10=shrdprfrmces.getString("Friday","");
+        st11=shrdprfrmces.getString("Saturday","");
+        st12=shrdprfrmces.getString("Sunday","");
+        txt5.setText(st1);
+        txt6.setText(st3);
+        txt7.setText(st4);
+        txt8.setText(st5);
+        txt9.setText(st6);
+        txt10.setText(st7);
+        txt11.setText(st8);
+        txt12.setText(st9);
+        txt13.setText(st10);
+        txt14.setText(st11);
+        txt15.setText(st12);
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        restoredata();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        restoredata();
+    }
 }
 
 

@@ -43,10 +43,10 @@ String resname,resphone,resmobile,resaddress,monday,saturday,sunday,tuesday,wedn
 
 
 
-        resname=result.getString("name","default");
-        resphone=result.getString("phone","default");
-        resmobile=result.getString("mobile","default");
-        resaddress=result.getString("address","default");
+        resname=result.getString("name","");
+        resphone=result.getString("phone","");
+        resmobile=result.getString("mobile","");
+        resaddress=result.getString("address","");
         monday=result.getString("Monday","");
         saturday=result.getString("Saturday","");
         sunday=result.getString("Sunday","");

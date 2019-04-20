@@ -501,9 +501,9 @@ public class EditRestaurantProfile extends AppCompatActivity implements TimePick
         String st1,st2,st3,st4,st5,st6,st7,st8,st9,st10,st11,st12,st13,st14,st15;
         st1=shrdprfrmces.getString("name","");
 
-        st3=shrdprfrmces.getString("phone","default");
-        st4=shrdprfrmces.getString("mobile","default");
-        st5=shrdprfrmces.getString("address","default");
+        st3=shrdprfrmces.getString("phone","");
+        st4=shrdprfrmces.getString("mobile","");
+        st5=shrdprfrmces.getString("address","");
         st6=shrdprfrmces.getString("Monday","");
         st7=shrdprfrmces.getString("Tuesday","");
         st8=shrdprfrmces.getString("Wednesday","");
